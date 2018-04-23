@@ -20,12 +20,7 @@ public class JavaWordCount {
                 .mapToPair(word -> new Tuple2<>(word, 1))
                 .reduceByKey((a, b) -> a + b);
 //        counts.saveAsTextFile("hdfs://master:9000/output/result.txt");
-
-        List<Tuple2<String,Integer>> output = counts.collect();
-
-        for (Tuple2<?,?> tuple : output){
-            System.out.println(tuple._1() + ":" + tuple._2());
-        }
+        counts.foreach(t -> System.out.println(t._1() + ":" + t._2()));
 
         sc.close();
     }
