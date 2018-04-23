@@ -52,6 +52,7 @@ public class JavaWordCount {
 //                    }
 //                    i++;
 //                }
+
                 return list.iterator();
             }
         });
