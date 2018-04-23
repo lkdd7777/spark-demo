@@ -44,14 +44,14 @@ public class JavaWordCount {
                 int i = 0;
 
                 List<String> list = Arrays.asList(SPACE.split(s));
-//                for (Iterator iter = list.iterator(); iter.hasNext();) {
-//                    String str = iter.next().toString();
-//
-//                    if(!set.contains(str)){
-//                        list.remove(i);
-//                    }
-//                    i++;
-//                }
+                for (Iterator iter = list.iterator(); iter.hasNext();) {
+                    String str = iter.next().toString();
+
+                    if(!set.contains(str)){
+                        list.remove(i);
+                    }
+                    i++;
+                }
 
                 return list.iterator();
             }
