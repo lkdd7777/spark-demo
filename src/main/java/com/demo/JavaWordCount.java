@@ -15,7 +15,7 @@ public class JavaWordCount {
         conf.setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
 
-        HashSet<String> set = new HashSet<String>();
+        HashSet<String> set = new HashSet<>();
         set.add("suitable");
         set.add("against");
         set.add("recent");
