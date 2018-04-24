@@ -1,7 +1,5 @@
 import org.apache.spark.{SparkConf, SparkContext}
 
-import scala.collection.mutable
-
 object ScalaWordCount {
 
   def main(args: Array[String]): Unit = {
