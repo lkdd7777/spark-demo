@@ -27,6 +27,7 @@ public class JavaSparkStreamTest {
 
         wordCounts.print();
 
+
         ssc.start();
         ssc.awaitTermination();
     }
