@@ -1,5 +1,6 @@
 package com.demo
 
+import org.apache.spark.
 import org.apache.spark.{SparkConf, SparkContext}
 
 object ScalaWordCount {
