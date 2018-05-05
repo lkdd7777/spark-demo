@@ -15,15 +15,15 @@ import java.util.Arrays;
  */
 public class JavaSparkStreamTest {
 
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) throws Exception {
         SparkConf conf = new SparkConf().setAppName("JavaSparkStreamTest").setMaster("local[2]");
 //        JavaStreamingContext ssc = new JavaStreamingContext(conf,new Duration(1000));
         JavaStreamingContext ssc = new JavaStreamingContext(conf, Durations.seconds(1));
-        JavaReceiverInputDStream<String> line = ssc.socketTextStream("locahost",9999);
+        JavaReceiverInputDStream<String> line = ssc.socketTextStream("locahost", 9999);
 
         JavaDStream<String> words = line.flatMap(s -> Arrays.asList(s.split(" ")).iterator());
 
-        JavaPairDStream<String,Integer> wordCounts = words.mapToPair(s -> new Tuple2<>(s,1)).reduceByKey((a,b) -> a+b);
+        JavaPairDStream<String, Integer> wordCounts = words.mapToPair(s -> new Tuple2<>(s, 1)).reduceByKey((a, b) -> a + b);
 
         wordCounts.print();
 
